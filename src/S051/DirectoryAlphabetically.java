@@ -4,12 +4,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class DirectoryAlphabetically {
-    public static void main(String[] args) {
 
-    try {
-        File DirectoryAlphabeticallyFile = new File("DirectoryAlphabeticallyFile.txt");
-            if (DirectoryAlphabeticallyFile.createNewFile()) {
-                System.out.println("File created: " + DirectoryAlphabeticallyFile.getName());
+    public void createANewDirectory() {
+        try {
+            File directoryAlphabeticallyFile = new File("DirectoryAlphabeticallyFile.txt");
+            directoryAlphabeticallyFile.mkdir();
+            if (directoryAlphabeticallyFile.createNewFile()) {
+                System.out.println("File created: " + directoryAlphabeticallyFile.getName());
             } else {
                 System.out.println("The File already exists");
             }
