@@ -7,18 +7,18 @@ import java.util.Comparator;
 
 public class DirectoryAlphabetically {
 
-    public void createANewDirectory() {
-        try {
-            File directoryAlphabeticallyFile = new File("DirectoryAlphabeticallyFile.txt");
-            directoryAlphabeticallyFile.mkdir();
-            if (directoryAlphabeticallyFile.createNewFile()) {
-                System.out.println("File created: " + directoryAlphabeticallyFile.getName());
-            } else {
-                System.out.println("The File already exists");
+    public boolean createDirectory(String directoryName) {
+            File newDirectory = new File(directoryName);
+            if (newDirectory.exists()) {
+                System.out.println("Directory already exists: " + newDirectory.getName());
+                return false;
             }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+            boolean directoryCreated = newDirectory.mkdir();
+            if (directoryCreated) {
+                System.out.println("Directory created: " + newDirectory.getName());
+                return true;
+            }
+        return false;
     }
 
     public void listAlphabeticallyTheDirectory(File listDirectory){
